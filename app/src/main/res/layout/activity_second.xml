@@ -6,10 +6,6 @@
         android:gravity="center"
         android:background="#00B0FF">
 
-        <!-- TextView para mostrar el primer valor -->
-
-        <!-- TextView para mostrar el segundo valor -->
-
         <TextView
             android:id="@+id/textoValor1"
             android:layout_width="wrap_content"

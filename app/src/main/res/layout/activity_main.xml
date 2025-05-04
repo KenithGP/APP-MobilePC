@@ -10,99 +10,129 @@
     <!-- EditTexts -->
 
 
-    <!-- Botón 1 -->
-
-
-    <!-- Botón 2 -->
-
-
-    <!-- Botón 3 -->
-
     <EditText
         android:id="@+id/numero1"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="58dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="90dp"
+        android:layout_marginEnd="8dp"
         android:hint="Número 1"
         android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/numero2"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/numero2"
-        android:layout_width="400dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:hint="Número 2"
         android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/suma"
-        app:layout_constraintTop_toBottomOf="@+id/numero1"
-        tools:layout_editor_absoluteX="5dp" />
-
-    <EditText
-        android:id="@+id/suma"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="8dp"
-        android:hint="Suma"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numero2" />
+        app:layout_constraintTop_toBottomOf="@+id/numero1" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupOperaciones"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/btn1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numero2"
+        app:layout_constraintVertical_bias="0.0">
+
+        <RadioButton
+            android:id="@+id/radioSuma"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Suma" />
+
+        <RadioButton
+            android:id="@+id/radioResta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resta" />
+
+        <RadioButton
+            android:id="@+id/radioMultiplica"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Multiplica" />
+
+        <RadioButton
+            android:id="@+id/radioDivide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Divide" />
+
+    </RadioGroup>
 
     <Button
         android:id="@+id/btn1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="256dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="13dp"
         android:backgroundTint="#8000FF"
         android:text="Enviar 1"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/btn2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/btn2"
-        app:layout_constraintTop_toTopOf="@+id/suma" />
+        app:layout_constraintTop_toBottomOf="@+id/numero2" />
 
     <Button
         android:id="@+id/btn2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:backgroundTint="#8000FF"
         android:text="Enviar 2"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/btn3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/btn3"
         app:layout_constraintTop_toBottomOf="@+id/btn1" />
 
     <Button
         android:id="@+id/btn3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="32dp"
+        android:layout_width="411dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="28dp"
         android:backgroundTint="#8000FF"
         android:text="Enviar 3"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn2" />
+        app:layout_constraintTop_toBottomOf="@+id/btn2"
+        tools:layout_editor_absoluteX="8dp" />
+
+    <TextView
+        android:id="@+id/Operaciones"
+        android:layout_width="243dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="36dp"
+        android:fontFamily="serif"
+        android:text="Operaciones"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/numero1"
+        tools:layout_editor_absoluteX="16dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

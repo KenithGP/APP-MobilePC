@@ -2,7 +2,7 @@ package com.example.pc1;
 
 import android.os.Bundle;
 import android.widget.TextView;
-
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SecondActivity extends AppCompatActivity {
@@ -19,52 +19,72 @@ public class SecondActivity extends AppCompatActivity {
         textoOperacion = findViewById(R.id.textoOperacion);
         textoResultado = findViewById(R.id.textoResultado);
 
-        // Obtener los valores pasados desde MainActivity
+        // Obtener los valores del Intent
         String valor1 = getIntent().getStringExtra("valor1");
         String valor2 = getIntent().getStringExtra("valor2");
         String operacion = getIntent().getStringExtra("operacion");
 
-        // Convertir los valores a números
-        double num1 = 0;
-        double num2 = 0;
-        double resultado = 0;
+        // Mostrar los datos recibidos
+        if (valor1 != null && valor2 == null && operacion == null) {
+            // Solo valor1 recibido → Botón 1
+            textoValor1.setText("Valor 1: " + valor1);
+            textoValor2.setText("");
+            textoOperacion.setText("");
+            textoResultado.setText("");
+            Toast.makeText(this, "Solo se envió el valor 1", Toast.LENGTH_SHORT).show();
 
-        try {
-            num1 = Double.parseDouble(valor1);
-            num2 = Double.parseDouble(valor2);
-        } catch (NumberFormatException e) {
-            textoResultado.setText("Error: Entrada no válida");
-            return;
-        }
+        } else if (valor1 != null && valor2 != null && operacion == null) {
+            // valor1 y valor2 → Botón 2
+            textoValor1.setText("Valor 1: " + valor1);
+            textoValor2.setText("Valor 2: " + valor2);
+            textoOperacion.setText("");
+            textoResultado.setText("");
+            Toast.makeText(this, "Se enviaron valor 1 y valor 2", Toast.LENGTH_SHORT).show();
 
-        // Realizar la operación seleccionada
-        switch (operacion) {
-            case "Suma":
-                resultado = num1 + num2;
-                break;
-            case "Resta":
-                resultado = num1 - num2;
-                break;
-            case "Multiplica":
-                resultado = num1 * num2;
-                break;
-            case "Divide":
-                if (num2 != 0) {
-                    resultado = num1 / num2;
-                } else {
-                    textoResultado.setText("Error: División por cero");
-                    return;
+        } else if (valor1 != null && valor2 != null && operacion != null) {
+            // valor1, valor2 y operacion → Botón 3
+            textoValor1.setText("Valor 1: " + valor1);
+            textoValor2.setText("Valor 2: " + valor2);
+            textoOperacion.setText("Operación: " + operacion);
+
+            double num1, num2, resultado = 0;
+            try {
+                num1 = Double.parseDouble(valor1);
+                num2 = Double.parseDouble(valor2);
+
+                switch (operacion) {
+                    case "Suma":
+                        resultado = num1 + num2;
+                        break;
+                    case "Resta":
+                        resultado = num1 - num2;
+                        break;
+                    case "Multiplica":
+                        resultado = num1 * num2;
+                        break;
+                    case "Divide":
+                        if (num2 != 0) {
+                            resultado = num1 / num2;
+                        } else {
+                            textoResultado.setText("Error: División por cero");
+                            return;
+                        }
+                        break;
+                    default:
+                        textoResultado.setText("Operación no válida");
+                        return;
                 }
-                break;
-            default:
-                textoResultado.setText("Operación no válida");
-                return;
-        }
 
-        // Mostrar los valores, operación y resultado en los TextViews
-        textoValor1.setText("Valor 1: " + valor1);
-        textoValor2.setText("Valor 2: " + valor2);
-        textoOperacion.setText("Operación: " + operacion);
-        textoResultado.setText("Resultado: " + resultado);
+                textoResultado.setText("Resultado: " + resultado);
+                Toast.makeText(this, "Operación realizada con éxito", Toast.LENGTH_SHORT).show();
+
+            } catch (NumberFormatException e) {
+                textoResultado.setText("Error: Números inválidos");
+            }
+
+        } else {
+            // Si no llegó ningún valor válido
+            textoResultado.setText("Error: Datos incompletos");
+        }
     }
 }
