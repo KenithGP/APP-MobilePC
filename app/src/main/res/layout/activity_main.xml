@@ -35,7 +35,6 @@
         android:layout_marginBottom="8dp"
         android:hint="Número 2"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/suma"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -91,7 +90,7 @@
         android:layout_marginTop="256dp"
         android:layout_marginEnd="8dp"
         android:backgroundTint="#8000FF"
-        android:text="Enviar 1"
+        android:text="Ver valor 1"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -106,7 +105,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:backgroundTint="#8000FF"
-        android:text="Enviar 2"
+        android:text="Ver valor 2"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -119,20 +118,22 @@
         android:layout_height="49dp"
         android:layout_marginTop="28dp"
         android:backgroundTint="#8000FF"
-        android:text="Enviar 3"
+        android:text=" Ver resultado"
         android:textColor="#FFFFFF"
         app:layout_constraintTop_toBottomOf="@+id/btn2"
-        tools:layout_editor_absoluteX="8dp" />
+        tools:layout_editor_absoluteX="8dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/Operaciones"
-        android:layout_width="243dp"
+        android:layout_width="266dp"
         android:layout_height="38dp"
         android:layout_marginBottom="36dp"
         android:fontFamily="serif"
         android:text="Operaciones"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/numero1"
-        tools:layout_editor_absoluteX="16dp" />
+        tools:layout_editor_absoluteX="16dp"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
